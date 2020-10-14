@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from graph_test import Ui_showGraph
-
+import detect
 class Ui_MainWindow(object):
     def show_graphs(self):                          #
         self.window= QtWidgets.QMainWindow()        #
@@ -18,7 +18,11 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)                #
         self.window.show()
 
-
+    def share(self):                                #calls detect.py passing three arguments
+        text1=self.lineEdit.text()
+        text2=self.lineEdit_2.text()
+        text3=self.lineEdit_3.text()
+        detect.detect_it(text1,text2,text3)
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -235,6 +239,9 @@ class Ui_MainWindow(object):
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
         self.pushButton_4.setObjectName("pushButton_4")
         self.horizontalLayout_2.addWidget(self.pushButton_4)
+
+        self.pushButton_4.clicked.connect(self.share)                   #calls share func to call detect.py
+
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_2.addWidget(self.pushButton_5)
