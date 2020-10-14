@@ -9,9 +9,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from graph_test import Ui_showGraph
 
 class Ui_MainWindow(object):
+    def show_graphs(self):                          #
+        self.window= QtWidgets.QMainWindow()        #
+        self.ui=Ui_showGraph()                      #
+        self.ui.setupUi(self.window)                #
+        self.window.show()
+
+
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 600)
@@ -290,6 +298,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.pushButton = QtWidgets.QPushButton(self.groupBox)
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.show_graphs)
         self.gridLayout_3.addWidget(self.pushButton, 0, 0, 1, 1)
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
         self.pushButton_2.setObjectName("pushButton_2")
