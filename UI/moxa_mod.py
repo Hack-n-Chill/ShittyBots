@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Moxa.ui'
+# Form implementation generated from reading ui file 'Moxa_mod.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -9,46 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from graph_test import Ui_showGraph
-import detect
-import pyqtgraph as pg
-import pyqtgraph.exporters
+
+
 class Ui_MainWindow(object):
-    def show_graphs(self):                          #
-        self.window= QtWidgets.QMainWindow()        #
-        self.ui=Ui_showGraph()                      #
-        self.ui.setupUi(self.window)                #
-        self.window.show()
-    
-    
-    # def exprt(self):
-    #         # create an exporter instance, as an argument give it
-    #         # the item you wish to export
-    #         self=Ui_showGraph() 
-
-    #         exporter = pg.exporters.ImageExporter(self.graph)
-    #         exporter_2 = pg.exporters.ImageExporter(self.graph_2)
-    #         # set export parameters if needed
-
-    #         exporter.parameters()['width'] = 100   # (note this also affects height parameter)
-    #         exporter_2.parameters()['width'] = 100
-    #         # save to file
-    #         exporter.export('Ratio vs Time.png')
-    #         exporter_2.export('Mask vs Nomask.png')
-    
-    
-    
-    def share(self):                                #calls detect.py passing three arguments
-        text1=self.lineEdit.text()
-        text2=self.lineEdit_2.text()
-        text3=self.lineEdit_3.text()
-        detect.detect_it(text1,text2,text3)
-
-    def restart(self):
-       self.lineEdit.setText("")
-       self.lineEdit_2.setText("")
-       self.lineEdit_3.setText("")
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 600)
@@ -113,7 +76,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 580, 538))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 580, 539))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setContentsMargins(9, 3, -1, -1)
@@ -260,14 +223,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.clicked.connect(self.restart)
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
         self.pushButton_4.setObjectName("pushButton_4")
         self.horizontalLayout_2.addWidget(self.pushButton_4)
-
-        self.pushButton_4.clicked.connect(self.share)                   #calls share func to call detect.py
-
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_2.addWidget(self.pushButton_5)
@@ -331,11 +290,9 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.pushButton = QtWidgets.QPushButton(self.groupBox)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.show_graphs)
         self.gridLayout_3.addWidget(self.pushButton, 0, 0, 1, 1)
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
         self.pushButton_2.setObjectName("pushButton_2")
-        #self.pushButton.clicked.connect(self.exprt)
         self.gridLayout_3.addWidget(self.pushButton_2, 0, 1, 1, 1)
         self.progressBar = QtWidgets.QProgressBar(self.groupBox)
         self.progressBar.setProperty("value", 24)
@@ -428,10 +385,8 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayout.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
-
-        ##Menu Bar
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -633,7 +588,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MOXA"))
@@ -662,7 +616,7 @@ class Ui_MainWindow(object):
         self.actionanalytics.setText(_translate("MainWindow", "analytics"))
         self.actionDetecions_Folder.setText(_translate("MainWindow", "Detecions Folder"))
         self.actionGraphs.setText(_translate("MainWindow", "Graphs"))
-        
+
 
 if __name__ == "__main__":
     import sys
