@@ -11,19 +11,40 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from graph_test import Ui_showGraph
 import detect
+import pyqtgraph as pg
+import pyqtgraph.exporters
 class Ui_MainWindow(object):
     def show_graphs(self):                          #
         self.window= QtWidgets.QMainWindow()        #
         self.ui=Ui_showGraph()                      #
         self.ui.setupUi(self.window)                #
         self.window.show()
+    
+    
+    # def exprt(self):
+    #         # create an exporter instance, as an argument give it
+    #         # the item you wish to export
+    #         self=Ui_showGraph() 
 
+    #         exporter = pg.exporters.ImageExporter(self.graph)
+    #         exporter_2 = pg.exporters.ImageExporter(self.graph_2)
+    #         # set export parameters if needed
+
+    #         exporter.parameters()['width'] = 100   # (note this also affects height parameter)
+    #         exporter_2.parameters()['width'] = 100
+    #         # save to file
+    #         exporter.export('Ratio vs Time.png')
+    #         exporter_2.export('Mask vs Nomask.png')
+    
+    
+    
     def share(self):                                #calls detect.py passing three arguments
         text1=self.lineEdit.text()
         text2=self.lineEdit_2.text()
         text3=self.lineEdit_3.text()
         detect.detect_it(text1,text2,text3)
 
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 600)
@@ -309,6 +330,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.pushButton, 0, 0, 1, 1)
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
         self.pushButton_2.setObjectName("pushButton_2")
+        #self.pushButton.clicked.connect(self.exprt)
         self.gridLayout_3.addWidget(self.pushButton_2, 0, 1, 1, 1)
         self.progressBar = QtWidgets.QProgressBar(self.groupBox)
         self.progressBar.setProperty("value", 24)
