@@ -25,7 +25,7 @@
 
 ## A Look Into How MOXA Works
 
-![Flow Chart](./flow_chart.png)
+![Flow Chart](./flow_chart.PNG)
 
 ## What it Does
 
