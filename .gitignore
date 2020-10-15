@@ -1,3 +1,6 @@
 videos/*.asf
 videos/*.mp4
+
+# IDE generated #
+.vs/
 .vscode/
