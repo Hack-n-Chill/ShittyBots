@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Moxa.ui'
+# Form implementation generated from reading ui file 'Moxa_mod.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -9,95 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import detect
-from subprocess import call
-from PyQt5.QtWidgets import * 
-import sys  # We need sys so that we can pass argv to QApplication
-import os
-sys.path.insert(1, '../Analytics')
-from menubar_utilities import *
-from graph_test import Ui_showGraph
-import webbrowser
-import subprocess, sys
+
 
 class Ui_MainWindow(object):
-    
-    
-    def show_graphs(self):                          #
-        self.window= QtWidgets.QMainWindow()        #
-        self.ui=Ui_showGraph()                      #
-        self.ui.setupUi(self.window)                #
-        self.window.show()
-    
-    
-    def moxa_window(self):
-        print('moxa')
-    
-    
-    def analytics_window(self):
-        print('analytics')
-    
-    
-    def detection_folder(self):
-        #os.startfile('../darknet_detection/CAMS') /*for windows grabage shitt*/
-        opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, '../darknet_detection/CAM/'])
-    
-    
-    def graph_folder(self):
-        #os.startfile('../Analytics/graph') /*for windows garbage shit*/
-        opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, '../Analytics/graph'])
-    
-    def analytics_folder(self):
-        #os.startfile('../Analytics')  /*for windows garbage shit*/
-        opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, '../Analytics'])
-         
-    def moxahelp(self):
-        webbrowser.open('https://github.com/Hack-n-Chill/ShittyBots', new=2)
-    
-    
-    # def exprt(self):
-    #         # create an exporter instance, as an argument give it
-    #         # the item you wish to export
-    #         self=Ui_showGraph() 
-
-    #         exporter = pg.exporters.ImageExporter(self.graph)
-    #         exporter_2 = pg.exporters.ImageExporter(self.graph_2)
-    #         # set export parameters if needed
-
-    #         exporter.parameters()['width'] = 100   # (note this also affects height parameter)
-    #         exporter_2.parameters()['width'] = 100
-    #         # save to file
-    #         exporter.export('Ratio vs Time.png')
-    #         exporter_2.export('Mask vs Nomask.png')
-    
-    
-    
-    def share(self):                                #calls detect.py passing three arguments
-        text1=self.lineEdit.text()
-        text2=self.lineEdit_2.text()
-        text3=self.lineEdit_3.text()
-        detect.detect_it(text1,text2,text3)
-
-    def close_window(self):
-        detect.close_window()
-
-    def attribute_add(self):                        #calls detect.py passing the attributes
-        ROI=self.lineEdit_4.text()
-        rot_angle=self.lineEdit_5.text()
-        stream_format=self.lineEdit_6.text()
-        detect.attribute_detect_it(ROI,rot_angle,stream_format)
-    
-    def restart(self):
-        self.lineEdit.setText("")
-        self.lineEdit_2.setText("")
-        self.lineEdit_3.setText("")
-        self.lineEdit_4.setText("")
-        self.lineEdit_5.setText("")
-        self.lineEdit_6.setText("")
-        
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 600)
@@ -162,7 +76,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 580, 538))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 580, 539))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setContentsMargins(9, 3, -1, -1)
@@ -309,24 +223,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.clicked.connect(self.restart)
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
         self.pushButton_4.setObjectName("pushButton_4")
         self.horizontalLayout_2.addWidget(self.pushButton_4)
-
-        self.pushButton_4.clicked.connect(self.share)                   #calls share func to call detect.py
-
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_2.addWidget(self.pushButton_5)
-
-        self.pushButton_5.clicked.connect(self.close_window)
-
         self.pushButton_7 = QtWidgets.QPushButton(self.frame)
         self.pushButton_7.setObjectName("pushButton_7")
         self.horizontalLayout_2.addWidget(self.pushButton_7)
-        self.pushButton_7.clicked.connect(self.detection_folder)
         self.verticalLayout.addWidget(self.frame)
         self.groupBox = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         palette = QtGui.QPalette()
@@ -387,11 +293,9 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.pushButton = QtWidgets.QPushButton(self.groupBox)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.show_graphs)
         self.gridLayout_3.addWidget(self.pushButton, 0, 0, 1, 1)
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.clicked.connect(self.analytics_folder)
         self.gridLayout_3.addWidget(self.pushButton_2, 0, 1, 1, 1)
         self.progressBar = QtWidgets.QProgressBar(self.groupBox)
         self.progressBar.setProperty("value", 24)
@@ -475,9 +379,6 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_8, 1, 0, 1, 1)
         self.pushButton_6 = QtWidgets.QPushButton(self.groupBox_3)
         self.pushButton_6.setObjectName("pushButton_6")
-
-        self.pushButton_6.clicked.connect(self.attribute_add) #to call the attribute addition function in moxa.py
-
         self.gridLayout.addWidget(self.pushButton_6, 3, 1, 1, 1)
         self.verticalLayout.addWidget(self.groupBox_3)
         self.label_5 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
@@ -487,10 +388,8 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayout.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
-
-        ##Menu Bar
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -670,19 +569,14 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.actionMoxa_Help = QtWidgets.QAction(MainWindow)
         self.actionMoxa_Help.setObjectName("actionMoxa_Help")
-        self.actionMoxa_Help.triggered.connect(self.moxahelp)
         self.actionmoxa = QtWidgets.QAction(MainWindow)
         self.actionmoxa.setObjectName("actionmoxa")
-        self.actionmoxa.triggered.connect(self.moxa_window)
         self.actionanalytics = QtWidgets.QAction(MainWindow)
         self.actionanalytics.setObjectName("actionanalytics")
-        self.actionanalytics.triggered.connect(self.analytics_window)
         self.actionDetecions_Folder = QtWidgets.QAction(MainWindow)
         self.actionDetecions_Folder.setObjectName("actionDetecions_Folder")
-        self.actionDetecions_Folder.triggered.connect(self.detection_folder)
         self.actionGraphs = QtWidgets.QAction(MainWindow)
         self.actionGraphs.setObjectName("actionGraphs")
-        self.actionGraphs.triggered.connect(self.graph_folder)
         self.menuView.addSeparator()
         self.menuView.addAction(self.actionmoxa)
         self.menuView.addAction(self.actionanalytics)
@@ -696,7 +590,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -727,7 +620,7 @@ class Ui_MainWindow(object):
         self.actionanalytics.setText(_translate("MainWindow", "analytics"))
         self.actionDetecions_Folder.setText(_translate("MainWindow", "Detecions Folder"))
         self.actionGraphs.setText(_translate("MainWindow", "Graphs"))
-        
+
 
 if __name__ == "__main__":
     import sys

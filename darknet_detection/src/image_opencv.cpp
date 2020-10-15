@@ -405,9 +405,9 @@ extern "C" void create_window_cv(char const* window_name, int full_screen, int w
 #else
         if (full_screen) window_type = cv::WINDOW_FULLSCREEN;
 #endif
-        cv::namedWindow(window_name, window_type);
-        cv::moveWindow(window_name, 0, 0);
-        cv::resizeWindow(window_name, width, height);
+        cv::namedWindow("MOXA", window_type);
+        cv::moveWindow("MOXA", 0, 0);
+        cv::resizeWindow("MOXA", width, height);
     }
     catch (...) {
         cerr << "OpenCV exception: create_window_cv \n";
@@ -447,17 +447,17 @@ extern "C" int wait_until_press_key_cv()
 extern "C" void make_window(char *name, int w, int h, int fullscreen)
 {
     try {
-        cv::namedWindow(name, cv::WINDOW_NORMAL);
+        cv::namedWindow("MOXA", cv::WINDOW_NORMAL);
         if (fullscreen) {
 #ifdef CV_VERSION_EPOCH // OpenCV 2.x
-            cv::setWindowProperty(name, cv::WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
+            cv::setWindowProperty("MOXA", cv::WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
 #else
-            cv::setWindowProperty(name, cv::WND_PROP_FULLSCREEN, cv::WINDOW_FULLSCREEN);
+            cv::setWindowProperty("MOXA", cv::WND_PROP_FULLSCREEN, cv::WINDOW_FULLSCREEN);
 #endif
         }
         else {
             cv::resizeWindow(name, w, h);
-            if (strcmp(name, "Demo") == 0) cv::moveWindow(name, 0, 0);
+            if (strcmp(name, "MOXA") == 0) cv::moveWindow("MOXA", 0, 0);
         }
     }
     catch (...) {
@@ -482,7 +482,7 @@ extern "C" void show_image_cv(image p, const char *name)
         cv::Mat mat = image_to_mat(copy);
         if (mat.channels() == 3) cv::cvtColor(mat, mat, cv::COLOR_RGB2BGR);
         else if (mat.channels() == 4) cv::cvtColor(mat, mat, cv::COLOR_RGBA2BGR);
-        cv::namedWindow(name, cv::WINDOW_NORMAL);
+        cv::namedWindow("MOXA", cv::WINDOW_NORMAL);
         cv::imshow(name, mat);
         free_image(copy);
     }
@@ -509,8 +509,8 @@ extern "C" void show_image_mat(mat_cv *mat_ptr, const char *name)
     try {
         if (mat_ptr == NULL) return;
         cv::Mat &mat = *(cv::Mat *)mat_ptr;
-        cv::namedWindow(name, cv::WINDOW_NORMAL);
-        cv::imshow(name, mat);
+        cv::namedWindow("MOXA", cv::WINDOW_NORMAL);
+        cv::imshow("MOXA", mat);
     }
     catch (...) {
         cerr << "OpenCV exception: show_image_mat \n";

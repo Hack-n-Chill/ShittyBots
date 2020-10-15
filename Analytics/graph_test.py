@@ -11,9 +11,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyqtgraph import PlotWidget, plot
 import pyqtgraph as pg
+import pyqtgraph.exporters
 import sys  # We need sys so that we can pass argv to QApplication
 import os
-sys.path.insert(1, '../Analytics')
 from givecolumns import *
 
 
@@ -98,6 +98,8 @@ class Ui_showGraph(object):
         self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
+        
+        
         self.graphWidget = pg.PlotWidget()
         self.graphWidget_2 = pg.PlotWidget()
         self.gridLayout.addWidget(self.graphWidget)
@@ -119,11 +121,11 @@ class Ui_showGraph(object):
         self.graphWidget_2.setLabel('left', 'ratio', **styles)
         self.graphWidget_2.setLabel('bottom', 'time', **styles)
         
-        
+        # generate something to export
         self.graphWidget_2.plot(time, ratio)
         self.graphWidget.plot(nomask, mask)
-        
-        
+
+       
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -135,11 +137,16 @@ class Ui_showGraph(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("Analytics", "Analytics"))
         self.label.setText(_translate("Analytics", "Graphs:"))
+    
+    # graph = pg.plot(time, ratio)
+    # graph_2 = pg.plot(nomask, mask)
+
 
 if __name__ == "__main__":
     import sys
