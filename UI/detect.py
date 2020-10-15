@@ -5,8 +5,12 @@ def detect_it(CAM_ID,CAM_IP,STREAM_PORT):
         #print(STREAM_PORT)
         darknet_detect="cd ../darknet_detection && ./darknet detector demo data/obj.data yolo-obj-test.cfg backup/yolo-obj_best.weights " + CAM_IP
         subprocess.run(darknet_detect, shell=True)
-
+def attribute_detect_it(ROI,rot_angle,stream_format):
+        print(ROI)
+        print(rot_angle)
+        print(stream_format)
 if __name__ == '__main__':
     # test1.py executed as script
     # do something
     detect_it()
+    attribute_detect_it()
