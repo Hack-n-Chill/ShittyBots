@@ -11,6 +11,8 @@
 *.dll
 *.lib
 *.dylib
+*.asf
+*.mp4
 mnist/
 data/
 caffe/
@@ -35,6 +37,7 @@ build/detect_cuda_compute_capabilities.cu
 build/.ninja_deps
 build/.ninja_log
 build/Makefile
+
 
 # OS Generated #
 .DS_Store*

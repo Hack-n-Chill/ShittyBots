@@ -18,6 +18,7 @@ sys.path.insert(1, '../Analytics')
 from menubar_utilities import *
 from graph_test import Ui_showGraph
 import webbrowser
+import subprocess, sys
 
 class Ui_MainWindow(object):
     
@@ -38,14 +39,20 @@ class Ui_MainWindow(object):
     
     
     def detection_folder(self):
-        os.startfile('..\\darknet_detection\\CAMS')
+        #os.startfile('../darknet_detection/CAMS') /*for windows grabage shitt*/
+        opener ="open" if sys.platform == "darwin" else "xdg-open"
+        subprocess.call([opener, '../darknet_detection/CAM/'])
     
     
     def graph_folder(self):
-        os.startfile('..\\Analytics\\graph')
+        #os.startfile('../Analytics/graph') /*for windows garbage shit*/
+        opener ="open" if sys.platform == "darwin" else "xdg-open"
+        subprocess.call([opener, '../Analytics/graph'])
     
     def analytics_folder(self):
-        os.startfile('..\\Analytics') 
+        #os.startfile('../Analytics')  /*for windows garbage shit*/
+        opener ="open" if sys.platform == "darwin" else "xdg-open"
+        subprocess.call([opener, '../Analytics'])
          
     def moxahelp(self):
         webbrowser.open('https://github.com/Hack-n-Chill/ShittyBots', new=2)
@@ -73,6 +80,9 @@ class Ui_MainWindow(object):
         text2=self.lineEdit_2.text()
         text3=self.lineEdit_3.text()
         detect.detect_it(text1,text2,text3)
+
+    def close_window(self):
+        detect.close_window()
 
     def attribute_add(self):                        #calls detect.py passing the attributes
         ROI=self.lineEdit_4.text()
@@ -310,6 +320,9 @@ class Ui_MainWindow(object):
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_2.addWidget(self.pushButton_5)
+
+        self.pushButton_5.clicked.connect(self.close_window)
+
         self.pushButton_7 = QtWidgets.QPushButton(self.frame)
         self.pushButton_7.setObjectName("pushButton_7")
         self.horizontalLayout_2.addWidget(self.pushButton_7)
@@ -443,18 +456,54 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.groupBox_3)
         self.gridLayout.setObjectName("gridLayout")
         self.lineEdit_5 = QtWidgets.QLineEdit(self.groupBox_3)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(44, 47, 51))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        self.lineEdit_5.setPalette(palette)
+        self.lineEdit_5.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.gridLayout.addWidget(self.lineEdit_5, 1, 1, 1, 1)
         self.label_9 = QtWidgets.QLabel(self.groupBox_3)
         self.label_9.setObjectName("label_9")
         self.gridLayout.addWidget(self.label_9, 2, 0, 1, 1)
         self.lineEdit_4 = QtWidgets.QLineEdit(self.groupBox_3)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(44, 47, 51))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        self.lineEdit_4.setPalette(palette)
+        self.lineEdit_4.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.gridLayout.addWidget(self.lineEdit_4, 0, 1, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.groupBox_3)
         self.label_7.setObjectName("label_7")
         self.gridLayout.addWidget(self.label_7, 0, 0, 1, 1)
         self.lineEdit_6 = QtWidgets.QLineEdit(self.groupBox_3)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(95, 105, 112))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(44, 47, 51))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        self.lineEdit_6.setPalette(palette)
+        self.lineEdit_6.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.gridLayout.addWidget(self.lineEdit_6, 2, 1, 1, 1)
         self.label_8 = QtWidgets.QLabel(self.groupBox_3)

@@ -12,6 +12,7 @@
 #include "blas.h"
 #include "connected_layer.h"
 
+//hello i am checking if you are alive 
 
 extern void predict_classifier(char *datacfg, char *cfgfile, char *weightfile, char *filename, int top);
 extern void run_voxel(int argc, char **argv);
