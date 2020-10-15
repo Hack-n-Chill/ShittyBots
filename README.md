@@ -1,4 +1,6 @@
-<img src = "/UI/moxa_main.png"  height="300">
+<p style="background-color: black;">
+<img src = "/UI/moxa_main.png"  style="  display: block;margin-left: auto; margin-right: auto;" height="250" >
+</p>
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
@@ -77,7 +79,7 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 <td>
 <strong>Biparnak Roy</strong>
 <p align="center">
-<img src = "https://avatars0.githubusercontent.com/u/33656173?s=400&u=a411c58cfffec9bf59da192674093abf4b82bd04&v=4"  height="120" alt="Abhishek Saxena">
+<img src = "https://www.shittybots.ml/img/team-4.1.jpg"  height="120" alt="Biparnak Roy">
 </p>
 <p align="center">
 <a href = "https://github.com/biparnakroy"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
@@ -89,7 +91,7 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 <td>
 <strong>Debojit Ghosh</strong>
 <p align="center">
-<img src = "https://avatars2.githubusercontent.com/u/60016461?s=400&u=9e9d50e037da73a840a5c43f8f2c2b98942452aa&v=4"  height="120" alt="Ansh Sharma">
+<img src = "https://www.shittybots.ml/img/team-1.1.jpg"  height="120" alt="Debojit Ghosh">
 </p>
 <p align="center">
 <a href = "https://github.com/drag-ged"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
@@ -101,7 +103,7 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 <td>
 <strong>Subhadip Nandy</strong>
 <p align="center">
-<img src = "https://media-exp1.licdn.com/dms/image/C4E03AQH4lFfT3j8blw/profile-displayphoto-shrink_200_200/0?e=1608163200&v=beta&t=7ZWWBWQnmsbjp6Wklntygyx1w9i4eFzk1J27DGmvTSA"  height="120" alt="Saisha Shetty">
+<img src = "https://www.shittybots.ml/img/team-5.1.jpg"  height="120" alt="Subhadip Nandy">
 </p>
 <p align="center">
 <a href = "https://github.com/Subhadip-decode"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
