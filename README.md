@@ -1,57 +1,42 @@
-![Logo](/UI/moxa_main.png)
+![Logo](/UI/top_main.png)
 
-# **MOXA** - DL based detection System
+# **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
-### Assistant to the Therapist
 
-## A Preview of What Fren Is:
+## Why do we need MOXA?
+#### Why do we need mask detection?
+> With 6.31M confirmed cases under the attack of COVID-19 in India. Maintaining sanity and hygiene remains the only way to prevent and fight the spreading of this deadly virus and making every individual aware of their sanitary health and ongoing COVID-19 epidemic.
+#### Then, Why MOXA?
+>Wearing masks is a necessity as per medical practitioners whenever you are at public places or places with high probability of people gathering, to reduce transmission rates. Manual monitoring would require a huge manpower engagement to overcome these we propose a real-monitoring of people wearing medical masks and determing the regions with high transmission chances.
 
-### Write down your experiences:
 
-![Therapist Screenshot](./assets/screenshot-client.png)
+##  Why is MOXA unique?
 
-### Let us help your therapist in helping you!
+- ### **Custom Dataset**
+  - The model is trained on a custom dataset of 10000 images (with over 90000 labels)
+- ### **Multiple Video-Streams**
+  - Streams videos after being run through detection model of different locations.
+- ### **Mask to No-mask plot**
+  - Camera ID based line graph of number of people wearing masks to number of people not wearing masks on the basis of periodic frame counts. 
+- ### **Ratio to time plot**
+  - Camera ID based line graph of ratio (of nomasks to masks) to time. 
+- ### **Exportable Analytics**
+  - The analytics provided about the detection can be exported as .avi files.
 
-![Therapist Screenshot](./assets/screenshot-therapist.png)
+## A Look Into How MOXA Works
 
-## Why is Mental health Important?
+![Flow Chart](./flow_chart.png)
 
-> Mental illnesses, such as depression and anxiety, affect people’s ability to participate in health-promoting behaviors. In turn, problems with physical health, such as chronic diseases, can have a serious impact on mental health and decrease a person’s ability to participate in treatment and recovery. Mental health conditions will affect a staggering one in four people at some time in their lives. When it comes to our commitments to the rest of the world, people are silent on the issue of mental health.
+## What it Does
 
-## Mental Health in 2020
-
-### What the Statistics say
-
-> 1/4 population is affected by a mental or neurological disorder. 50% of lifetime mental illness begins by the age 14, 75% by 24. 5% of adults experience a mental illness equivalent to 43.8 million people. And this is just a fraction of it.
-
-## Let us help,
-
-### To encourage therapy.
-
-**Our Hack of the Hour presents to you a product which is meant to strengthen the relationship between a Therapist & its Client. A product that is meant to channel the Client's emotions and feelings anytime. Providing a detailed analysis, tailored to the Client itself.**
-
-## Features offered by Fren
-
-- ### **Mobile-ready web app**
-  - A MERN Web Application ready to be accessed anywhere, anytime.
-- ### **Accurate data logging**
-  - Reliable entry logging in a Node.js API along with timestamp collection, for analysis of data.
-- ### **Sentiment analysis**
-  - Receives data through a Flask API, analyses a journal entry to describe The Client's mood. It is a multi-layer perceptron to classify between different moods.
-- ### **Word analysis**
-  - Scans through the journal entry and highlights the context. It uses Text-Frequency And Inverse Document Frequency to judge how important a word is to the context.
-- ### **Network visualisation**
-  - To generate a Graph Visualisation of strongly context-related words.
-
-## A Look Into How Fren Works
-
-![Flow Chart](./assets/flow-chart.png)
-
-## WHAT IT DOES
-
-1. **Capture** - The Client writes it's thoughts, feelings, and emotions down in our product.
-2. **Calculate** - We take them and perform some magic on it, providing some numbers and comparisons.
-3. **Conclude** - The bunny out of the bag is shown to the Therapist, custom to each client to support the process in its entirety.
+1. **CCTV feed** - The model is provided with CCTV video feeds for detection.
+2. **Detection Procedure** - The model detects masks and no masks from the CCTV feeds.
+3. **Ratio Calculation** - Calculates the ratio of number of no-mask to mask in each frame and a finally its average across a periodic frame count is used to store in a .csv file.
+4. **Graphical Representation**- Two line graphs are plotted on the basis of the .csv files.
+    - **mask to no-mask**
+    - **ratio to time**
+5. **Remote Detection Streams**- The CCTV feeds are streamed with detections.
+6. **Overlay Warning**- The loactions with ratio lower than threshold value are marked with higher transmission chances
 
 ## Technology Stack and Dependencies
 
@@ -72,17 +57,17 @@
 
 ## Future Developments
 
-### Text Summarization
+### Dataset Enrichment
 
-Privacy of the client is extremely essential. However in extreme cases, keeping in mind the well being of the client, the summary of the clients note will be provided to the therapist.
+With time to increase the accuracy of the model we wish to enrich our dataset further more.
 
-### Chatbot
+### Unsupervised Learning
 
-To make it more user friendly we wish to create an interactive BOT to help the client with his specific needs.
+We wish to incoporate unsupervised learning to reduce periodic updates of the model for upgrading its functioning precision.
 
-### Photo psychology
+### Multiple Object Tracking
 
-Exploration of how clients react to pictures so as to understand their spectrum of emotions.
+We wish to develop an algorithm to identify a person occuring in multiple frames as one to overcome the redundancy in the ratio calculation and its plot.
 
 # Thank You!
 
@@ -90,68 +75,41 @@ Exploration of how clients react to pictures so as to understand their spectrum 
 <table align="center">
 <tr align="center">
 <td>
-<strong>Abhishek Saxena</strong>
+<strong>Biparnak Roy</strong>
 <p align="center">
 <img src = "https://avatars0.githubusercontent.com/u/33656173?s=400&u=a411c58cfffec9bf59da192674093abf4b82bd04&v=4"  height="120" alt="Abhishek Saxena">
 </p>
 <p align="center">
-<a href = "https://github.com/saxenabhishek"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/abhibored">
+<a href = "https://github.com/biparnakroy"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/biparnak-roy-b32b34a8">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
 </td>
 <td>
-<strong>Ansh Sharma</strong>
+<strong>Debojit Ghosh</strong>
 <p align="center">
 <img src = "https://avatars2.githubusercontent.com/u/60016461?s=400&u=9e9d50e037da73a840a5c43f8f2c2b98942452aa&v=4"  height="120" alt="Ansh Sharma">
 </p>
 <p align="center">
-<a href = "https://github.com/DaemonOnCode"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/anshsharma09">
+<a href = "https://github.com/drag-ged"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/debojit-ghosh-323657146">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
 </td>
 <td>
-<strong>Saisha Shetty</strong>
+<strong>Subhadip Nandy</strong>
 <p align="center">
 <img src = "https://media-exp1.licdn.com/dms/image/C4E03AQH4lFfT3j8blw/profile-displayphoto-shrink_200_200/0?e=1608163200&v=beta&t=7ZWWBWQnmsbjp6Wklntygyx1w9i4eFzk1J27DGmvTSA"  height="120" alt="Saisha Shetty">
 </p>
 <p align="center">
-<a href = "https://github.com/SaishaShetty"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/saisha-shetty-bba6b81a7">
+<a href = "https://github.com/Subhadip-decode"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/subhadip-nandy-b07945188">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
 </td>
 </tr>
 </table>
-<table align="center">
-<tr align="center">
-<td>
-<strong>Gita Alekhya Paul</strong>
-<p align="center">
-<img src = "https://avatars3.githubusercontent.com/u/54375111?s=460&u=0585ce48d7a98d878ee16041d73695e37b17ade0&v=4"  height="120" alt="Gita Alekhya Paul">
-</p>
-<p align="center">
-<a href = "https://github.com/gitaalekhyapaul"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/gitaalekhyapaul">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
-</a>
-</p>
-</td>
-<td>
-<strong>Yashvardhan Jagnani</strong>
-<p align="center">
-<img src = "https://avatars0.githubusercontent.com/u/60016972?s=460&u=44becacb17c82494c8a16c1d17f9f7183f8d67c3&v=4"  height="120" alt="Yashvardhan Jagnani">
-</p>
-<p align="center">
-<a href = "https://github.com/jagnani73"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/yashvardhan-jagnani">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
-</a>
-</p>
-</td>
-</tr>
-</table>
+
