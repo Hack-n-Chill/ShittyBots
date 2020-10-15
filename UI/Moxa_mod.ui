@@ -599,6 +599,13 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="text">
+              <string>Open Saved</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>

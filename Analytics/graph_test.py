@@ -14,7 +14,6 @@ import pyqtgraph as pg
 import pyqtgraph.exporters
 import sys  # We need sys so that we can pass argv to QApplication
 import os
-sys.path.insert(1, '../Analytics')
 from givecolumns import *
 
 
