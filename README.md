@@ -1,6 +1,6 @@
-<div style="background-color: black;">
+<section style="background-color: black;">
 <img src = "/UI/moxa_main.png"  style="  display: block;margin-left: auto; margin-right: auto;" height="250" >
-</div>
+</section>
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
