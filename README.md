@@ -1,4 +1,4 @@
-<img src = "/top_main2.png"  height="300">
+<img src = "/top_main2.png"  width="800" height="300">
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
