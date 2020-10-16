@@ -46,7 +46,7 @@
   - CUDNN
   - OpenCV(with CUDA support)
 - **APIs**
-  - 
+  - Python Script
 - **Front-end**
   - PyQt5
 
