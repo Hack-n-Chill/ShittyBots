@@ -4,5 +4,7 @@ pyqtgraph,
 pandas,
 numpy,
 opencv,
-webbrowser
-
+webbrowser,
+Darknet,
+CUDA,
+CUDNN
