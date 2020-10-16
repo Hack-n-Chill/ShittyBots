@@ -1,6 +1,4 @@
-<p style="background-color: black;">
-<img src = "/UI/moxa_main.png"  style="  display: block;margin-left: auto; margin-right: auto;" height="250" >
-</p>
+<img src = "/UI/moxa_main.png"  height="300">
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
@@ -42,20 +40,15 @@
 
 ## Technology Stack and Dependencies
 
-- **ML**
-  - sklearn
-  - nltk
-  - spacy
-  - textblob
-  - pytorch
+- **Deep Learning**
+  - Darknet Framework
+  - CUDA 10.1
+  - CUDNN
+  - OpenCV(with CUDA support)
 - **APIs**
-  - Node.js
-  - Express in TypeScript
-  - MongoDB
-  - Flask
+  - Python Script
 - **Front-end**
-  - React.js in TypeScript-XML
-  - Tailwind CSS
+  - PyQt5
 
 ## Future Developments
 
@@ -70,6 +63,8 @@ We wish to incoporate unsupervised learning to reduce periodic updates of the mo
 ### Multiple Object Tracking
 
 We wish to develop an algorithm to identify a person occuring in multiple frames as one to overcome the redundancy in the ratio calculation and its plot.
+
+###
 
 # Thank You!
 
@@ -114,4 +109,3 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 </td>
 </tr>
 </table>
-
