@@ -39,7 +39,8 @@
 6. **Overlay Warning**- The loactions with ratio lower than threshold value are marked with higher transmission chances
 
 ## Technology Stack and Dependencies
-
+-**Operating System**
+  - Linux (with xterm)
 - **Deep Learning**
   - Darknet Framework
   - CUDA 10.1
