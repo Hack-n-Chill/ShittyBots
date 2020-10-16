@@ -14,7 +14,7 @@ from subprocess import call
 from PyQt5.QtWidgets import * 
 import sys  # We need sys so that we can pass argv to QApplication
 import os
-sys.path.insert(1, '../Analytics')
+sys.path.insert(1, '../Analytics/')
 from menubar_utilities import *
 from graph_test import Ui_showGraph
 import webbrowser
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
     def analytics_folder(self):
         #os.startfile('../Analytics')  /*for windows garbage shit*/
         opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, '../Analytics'])
+        subprocess.call([opener, '../Analytics/graph'])
          
     def moxahelp(self):
         webbrowser.open('https://github.com/Hack-n-Chill/ShittyBots', new=2)
@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
         detect.detect_it(text1,text2,text3)
 
     def close_window(self):
-        detect.close_window()
+        detect.close_window(1)
 
     def attribute_add(self):                        #calls detect.py passing the attributes
         ROI=self.lineEdit_4.text()
@@ -100,8 +100,8 @@ class Ui_MainWindow(object):
         
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 600)
-        MainWindow.setMinimumSize(QtCore.QSize(600, 600))
+        MainWindow.resize(600, 625)
+        MainWindow.setMinimumSize(QtCore.QSize(600, 625))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
