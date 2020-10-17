@@ -1,4 +1,4 @@
-<img src = "/UI/moxa_main.png"  height="300">
+<img src = "/top_main2.png"  width="100%" height="280">
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
@@ -39,7 +39,8 @@
 6. **Overlay Warning**- The loactions with ratio lower than threshold value are marked with higher transmission chances
 
 ## Technology Stack and Dependencies
-
+- **Operating System**
+  - Linux (with xterm)
 - **Deep Learning**
   - Darknet Framework
   - CUDA 10.1
