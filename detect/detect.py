@@ -1,5 +1,8 @@
 import subprocess
 
+ROI=""
+rot_angle=""
+overlay=""
 
 
 def detect_it(CAM_ID,CAM_IP,STREAM_PORT):
@@ -14,22 +17,31 @@ def detect_it(CAM_ID,CAM_IP,STREAM_PORT):
                 #p.subprocess.kill()
 
         #-----------Actual program---------------#
+        detect_it.exec = 1
 
-        DARKNET_DETECTOR_PATH = "/darknet_detection" #path of the darknet detection engine
+        DARKNET_DETECTOR_PATH = "../darknet_detection" #path of the darknet detection engine
 
         if CAM_ID == "" or CAM_IP == "":
                 subprocess.run(["/usr/bin/notify-send", "--icon=error", "You have not entered the camera details properly!"])
-        if CAM_ID != "" and CAM_IP != "":
+        if CAM_ID != "" and CAM_IP != "" and STREAM_PORT=="":
                 p=subprocess.Popen("xterm -e 'tty >&3; cd {0} && ./darknet detector demo data/obj.data yolo-obj-test.cfg backup/yolo-obj_best.weights {1}  -cam_id {2} -interval 2' 3>&1".format( DARKNET_DETECTOR_PATH,CAM_IP, CAM_ID),shell=True, stdout=subprocess.PIPE)
+        if CAM_ID != "" and CAM_IP != "" and STREAM_PORT!="":
+                p=subprocess.Popen("xterm -e 'tty >&3; cd {0} && ./darknet detector demo data/obj.data yolo-obj-test.cfg backup/yolo-obj_best.weights {1}  -cam_id {2} -interval 2  -mjpeg_port {3}' 3>&1".format( DARKNET_DETECTOR_PATH,CAM_IP, CAM_ID, STREAM_PORT),shell=True, stdout=subprocess.PIPE)
+        
+detect_it.exec = 0
 
 def close_window():
-        subprocess.Popen("killall xterm", shell=True)
+        if detect_it.exec !=0:
+                subprocess.Popen("killall xterm", shell=True)
+                detect_it.exec = 0
+
         
 
-def attribute_detect_it(ROI,rot_angle,stream_format):
-        print(ROI)
-        print(rot_angle)
-        print(stream_format)
+def attribute_detect_it(ROI,rot_angle,overlay):
+       attribute_detect_it.ROI = ROI
+       attribute_detect_it.rot_angle = rot_angle
+       attribute_detect_it.overlay=overlay
+
 if __name__ == '__main__':
     # test1.py executed as script
     # do something
