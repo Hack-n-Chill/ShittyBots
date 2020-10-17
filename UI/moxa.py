@@ -20,6 +20,9 @@ from graph_test import Ui_showGraph
 import webbrowser
 import subprocess, sys
 
+#static conters
+scout = 0
+
 class Ui_MainWindow(object):
     
     
@@ -80,9 +83,10 @@ class Ui_MainWindow(object):
         text2=self.lineEdit_2.text()
         text3=self.lineEdit_3.text()
         detect.detect_it(text1,text2,text3)
+        
 
     def close_window(self):
-        detect.close_window(1)
+        detect.close_window()
 
     def attribute_add(self):                        #calls detect.py passing the attributes
         ROI=self.lineEdit_4.text()
