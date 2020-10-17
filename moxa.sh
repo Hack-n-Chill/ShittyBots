@@ -1,1 +1,1 @@
-cd UI && python moxa.py
+cd UI && nohup python moxa.py &

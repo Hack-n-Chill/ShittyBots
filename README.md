@@ -110,4 +110,3 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 </td>
 </tr>
 </table>
-
