@@ -1,0 +1,13 @@
+xterm: no process found
+Traceback (most recent call last):
+  File "moxa.py", line 86, in share
+    detect.detect_it(text1,text2,text3)
+  File "../detect/detect.py", line 29, in detect_it
+    print(attribute_detect_it.ROI)
+AttributeError: 'function' object has no attribute 'ROI'
+Traceback (most recent call last):
+  File "moxa.py", line 86, in share
+    detect.detect_it(text1,text2,text3)
+  File "../detect/detect.py", line 29, in detect_it
+    print(attribute_detect_it.ROI)
+AttributeError: 'function' object has no attribute 'ROI'

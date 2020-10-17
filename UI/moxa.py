@@ -9,12 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import detect
 from subprocess import call
 from PyQt5.QtWidgets import * 
 import sys  # We need sys so that we can pass argv to QApplication
 import os
 sys.path.insert(1, '../Analytics/')
+sys.path.insert(2, '../detect/')
+import detect
 from menubar_utilities import *
 from graph_test import Ui_showGraph
 import webbrowser
@@ -91,8 +92,8 @@ class Ui_MainWindow(object):
     def attribute_add(self):                        #calls detect.py passing the attributes
         ROI=self.lineEdit_4.text()
         rot_angle=self.lineEdit_5.text()
-        stream_format=self.lineEdit_6.text()
-        detect.attribute_detect_it(ROI,rot_angle,stream_format)
+        overlay=self.lineEdit_6.text()
+        detect.attribute_detect_it(ROI,rot_angle,overlay)
     
     def restart(self):
         self.lineEdit.setText("")
@@ -754,7 +755,7 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Show Graphs"))
         self.pushButton_2.setText(_translate("MainWindow", "Open"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Streams"))
-        self.label_9.setText(_translate("MainWindow", "Stream Format"))
+        self.label_9.setText(_translate("MainWindow", "Overlay Warning"))
         self.label_7.setText(_translate("MainWindow", "ROI"))
         self.label_8.setText(_translate("MainWindow", "Rotation Angle"))
         self.pushButton_6.setText(_translate("MainWindow", "Apply"))
