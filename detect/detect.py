@@ -18,7 +18,7 @@ def detect_it(CAM_ID,CAM_IP,STREAM_PORT):
 
         #-----------Actual program---------------#
         detect_it.exec = 1
-
+        detect_it.cam_id=CAM_ID
         DARKNET_DETECTOR_PATH = "../darknet_detection" #path of the darknet detection engine
 
         if CAM_ID == "" or CAM_IP == "":
@@ -35,6 +35,8 @@ def close_window():
                 subprocess.Popen("killall xterm", shell=True)
                 detect_it.exec = 0
 
+def share_graph():
+        return detect_it.cam_id
         
 
 def attribute_detect_it(ROI,rot_angle,overlay):
