@@ -66,12 +66,13 @@ class Ui_MainWindow(object):
 
     def show_graphs(self):           
         global count
-        for x in range(count) :                
+        x=0
+        while x <= count :                
             path_to_folder = "../darknet_detection/CAM/"
             CAM_ID = os.listdir(path_to_folder)
-            path_to_csv = "../darknet_detection/CAM/{cam_id}/csv/".format(cam_id=CAM_ID[count])
+            path_to_csv = "../darknet_detection/CAM/{cam_id}/csv/".format(cam_id=CAM_ID[x])
             filename = os.listdir(path_to_csv)
-            csv = "../darknet_detection/CAM/{cam_id}/csv/{fname}".format(cam_id=CAM_ID[count],fname=filename[count])
+            csv = "../darknet_detection/CAM/{cam_id}/csv/{fname}".format(cam_id=CAM_ID[x],fname=filename[x])
             df = pd.read_csv(csv)
             mask = df[" mask"]
             nomask = df[" nomask"]
@@ -82,7 +83,7 @@ class Ui_MainWindow(object):
             fig, ax = plt.subplots() 
     
             # setting title to graph 
-            ax.set_title('Ratio/Time') 
+            ax.set_title("{cam_id}Ratio/Time".format(cam_id=CAM_ID[x])) 
             
             # label x-axis and y-axis 
             ax.set_ylabel('Ratio') 
@@ -91,6 +92,7 @@ class Ui_MainWindow(object):
             # function to plot and show graph 
             ax.plot(time, ratio) 
             plt.show() 
+            x = x + 1
         #    count = count + 1
         #     # self.window= QtWidgets.QMainWindow()              #
         #     # self.ui = Ui_showGraph()
