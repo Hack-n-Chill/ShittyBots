@@ -52,9 +52,12 @@
   - PyQt5
 
 ## How to run MOXA
+```
 git clone https://github.com/Hack-n-Chill/ShittyBots.git
+cd ShittyBots
 chmod +x moxa.sh
 
+```
 ### Dataset Enrichment
 
 With time to increase the accuracy of the model we wish to enrich our dataset further more.
