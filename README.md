@@ -58,6 +58,9 @@ cd ShittyBots
 chmod +x moxa.sh
 ./moxa.sh
 ```
+
+## Future developments
+
 ### Dataset Enrichment
 
 With time to increase the accuracy of the model we wish to enrich our dataset further more.
