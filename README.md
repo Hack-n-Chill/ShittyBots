@@ -44,7 +44,7 @@
 - **Deep Learning**
   - Darknet Framework
   - CUDA 10.1
-  - CUDNN
+  - CUDNN 7
   - OpenCV(with CUDA support)
 - **APIs**
   - Python Script
