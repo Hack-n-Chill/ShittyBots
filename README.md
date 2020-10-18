@@ -33,7 +33,6 @@
 2. **Detection Procedure** - The model detects masks and no masks from the CCTV feeds.
 3. **Ratio Calculation** - Calculates the ratio of number of no-mask to mask in each frame and a finally its average across a periodic frame count is used to store in a .csv file.
 4. **Graphical Representation**- Two line graphs are plotted on the basis of the .csv files.
-    - **mask to no-mask**
     - **ratio to time**
 5. **Remote Detection Streams**- The CCTV feeds are streamed with detections.
 6. **Overlay Warning**- The loactions with ratio lower than threshold value are marked with higher transmission chances
