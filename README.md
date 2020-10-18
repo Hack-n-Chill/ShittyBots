@@ -56,7 +56,7 @@
 git clone https://github.com/Hack-n-Chill/ShittyBots.git
 cd ShittyBots
 chmod +x moxa.sh
-
+./moxa.sh
 ```
 ### Dataset Enrichment
 
