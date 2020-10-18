@@ -1,4 +1,4 @@
-<img src = "/top_main2.png"  width="100%" height="280">
+<img src = "/Assets/top_main2.png"  width="100%" height="280">
 
 # **MOXA** - A Deep Learning Based Approach to detect face masks from CCTV feeds
 
@@ -25,7 +25,7 @@
 
 ## A Look Into How MOXA Works
 
-![Flow Chart](./flow_chart.PNG)
+![Flow Chart](./Assets/flow_chart.PNG)
 
 ## What it Does
 
@@ -51,7 +51,9 @@
 - **Front-end**
   - PyQt5
 
-## Future Developments
+## How to run MOXA
+git clone https://github.com/Hack-n-Chill/ShittyBots.git
+chmod +x moxa.sh
 
 ### Dataset Enrichment
 
@@ -110,4 +112,3 @@ We wish to develop an algorithm to identify a person occuring in multiple frames
 </td>
 </tr>
 </table>
-

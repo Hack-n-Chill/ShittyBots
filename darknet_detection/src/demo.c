@@ -221,7 +221,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, float hier_thresh, int 
     int count = 0;
     if(!prefix && !dont_show){
         int full_screen = 0;
-        create_window_cv("Demo", full_screen, 600, 600);
+        create_window_cv("Demo", full_screen, 400, 400);
     }
 
 
